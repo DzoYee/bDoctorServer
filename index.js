@@ -9,5 +9,5 @@ app.listen(8080, function () {
   console.log('Listening on port 8080')
 })
 
-require('../config/routes.js')(app, express);
 require('../config/middleware.js')(app, express);
+require('../config/routes.js')(app, express);
