@@ -10,3 +10,4 @@ app.listen(8080, function () {
 })
 
 require('../config/routes.js')(app, express);
+require('../config/middleware.js')(app, express);
