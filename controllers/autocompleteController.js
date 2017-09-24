@@ -7,17 +7,17 @@ module.exports = {
   search:  (req, res, next) => {
 
 
-    request(doctorApi + 'name=' + req.params.input + '&limit=20&user_key=' + api_key, (error, response, body) => {
+    request(doctorApi + 'name=' + req.params.input + '&limit=7&user_key=' + api_key, (error, response, body) => {
       let resp = JSON.parse(body);
       if (resp) {
         resp = _.map(resp.data, (doctor) => {
           return {
             first_name: doctor.profile.first_name,
-            last_name: doctor.profile.last_name
+            last_name: doctor.profile.last_name,
+            uid: doctor.uid
           }
         })
       }
-
       res.send(resp);
     })
 
