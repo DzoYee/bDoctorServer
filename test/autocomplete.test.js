@@ -9,11 +9,9 @@ let should = chai.should();
 let sinon = require('sinon');
 let sinonChai = require('sinon-chai');
 chai.use(sinonChai);
+chai.use(chaiHttp);
 
 let autocompleteController = require('../dist/controllers/autocompleteController');
-
-
-chai.use(chaiHttp);
 
 describe('AutoComplete', () => {
   describe('GET autocomplete/:input', () => {
@@ -69,6 +67,4 @@ describe('AutoComplete', () => {
       }]);
     })
   });
-
-
 });
