@@ -11,3 +11,5 @@ app.listen(8000, function () {
 
 require('../config/middleware.js')(app, express);
 require('../config/routes.js')(app, express);
+
+module.exports = app; //for testing
