@@ -19,23 +19,25 @@ describe('AutoComplete', () => {
       sinon
         .stub(request, 'get')
         .yields(null, null, JSON.stringify({
-            data: [
-              {
-                profile: {
-                  first_name: "MF",
-                  last_name: "DOOM",
-                  nick_name: "MetalFaceDoom"
-                },
-                associatedActs: ["Andre3000", "Madvillain"],
-                uid: "DoctorOcta"
-              }
-            ] 
-        }));
-
-        after(function(){
-          request.get.restore();
-        });
+        data: [
+          {
+            profile: {
+              first_name: "MF",
+              last_name: "DOOM",
+              nick_name: "MetalFaceDoom",
+              title: "MD",
+              image_url: "mf.com"
+            },
+            associatedActs: ["Andre3000", "Madvillain"],
+            uid: "DoctorOcta",
+          }
+        ] 
+      }));
     })
+
+    after(function(){
+      request.get.restore();
+    });
 
     it('it should GET Doctors', (done) => {
       chai.request(server)
