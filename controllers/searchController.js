@@ -14,7 +14,8 @@ module.exports = {
             last_name: doctor.profile.last_name,
             title: doctor.profile.title,
             image_url: doctor.profile.image_url,
-            uid: doctor.uid
+            uid: doctor.uid,
+            bio: doctor.profile.bio
           }
         })
       }
